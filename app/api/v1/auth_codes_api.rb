@@ -80,6 +80,40 @@ module V1
         
       end # end post fetch
       
+      desc "检查验证码是否有效"
+      params do
+        requires :mobile, type: String, desc: "手机号"
+        requires :code,   type: String, desc: "收到的短信验证码"
+        requires :api_key, type: String, desc: "api key"
+      end
+      get :check_valid do
+        sms_config = SmsConfig.find_by(api_key: params[:api_key])
+        return render_error(2001, "不正确的api key") if sms_config.blank?
+        ac = sms_config.auth_codes.where('mobile = ? and code = ? and activated_at is null', params[:mobile], params[:code]).first
+        { code: 0, message: 'ok', data: { valid: !ac.blank? } }
+      end # end get check_valid
+      
+      desc "让验证码失效"
+      params do
+        requires :mobile, type: String, desc: "手机号"
+        requires :code,   type: String, desc: "收到的短信验证码"
+        requires :api_key, type: String, desc: "api key"
+      end
+      post :invalid do
+        sms_config = SmsConfig.find_by(api_key: params[:api_key])
+        return render_error(2001, "不正确的api key") if sms_config.blank?
+        
+        ac = sms_config.auth_codes.where('mobile = ? and code = ? and activated_at is null', params[:mobile], params[:code]).first
+        return render_error(2002, "验证码无效") if ac.blank?
+        
+        if ac.update_attribute(:activated_at, Time.now)
+          render_json_no_data
+        else
+          render_error(2003, "验证码验证失败")
+        end
+        
+      end # end post invalid
+      
     end # end resource auth_codes
   end
 end
