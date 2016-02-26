@@ -267,7 +267,7 @@ DEPENDENCIES
   annotate (~> 2.6.5)
   better_errors
   binding_of_caller
-  bootstrap-sass (~> 3.2.0)
+  bootstrap-sass
   bootstrap_helper (= 4.2.3)
   capistrano-bundler
   capistrano-rails (~> 1.1.0)

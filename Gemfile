@@ -37,7 +37,7 @@ gem 'mini_magick'#,'~> 4.2.7'#, require: false
 gem 'posix-spawn'
 
 # Bootstrap UI
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass'#, '~> 3.2.0'
 
 # 分页
 gem 'will_paginate'
