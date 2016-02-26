@@ -27,7 +27,7 @@ module CentralServices
     
     # 确保app配置文件存在
     if Rails.env.development?
-      %w(config redis database secrets).each do |fname|
+      %w(config database).each do |fname|
         filename = "config/#{fname}.yml"
         next if File.exist?(Rails.root.join(filename))
         FileUtils.cp(Rails.root.join("#{filename}.example"), Rails.root.join(filename))

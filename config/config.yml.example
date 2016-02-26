@@ -4,6 +4,7 @@ defaults: &defaults
   admin_emails:
     - "admin@admin.com"
   email_sender: 'noreply@shuiguoshe.com'
+  upload_url: ''
 
 development:
   <<: *defaults

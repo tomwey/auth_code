@@ -5,8 +5,14 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
+development:
+  <<: *default
+  database: DB_NAME_DEV
+  
+test:
+  <<: *default
+  database: DB_NAME_DEV
+  
 production:
   <<: *default
-  database: daydayup
-  username: 
-  password: 
+  database: DB_NAME_DEV
