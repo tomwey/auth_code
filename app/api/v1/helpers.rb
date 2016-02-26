@@ -24,6 +24,9 @@ module V1
   
     # 1.格式化输出带结果数据的json
     def render_json(target, grape_entity, opts = {})
+      return { code: 0, message: 'ok', data: [] } if target.is_a?(Array) and target.blank?
+      return { code: 0, message: 'ok', data: {} } if target.blank?
+      
       present target, :with => grape_entity, :opts => opts
       body( { code: 0, message: 'ok', data: body } )
     end # end render_json method

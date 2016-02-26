@@ -12,6 +12,8 @@ module V1
     helpers V1::SharedParams
     
     mount V1::Welcome
+    mount V1::AuthCodesAPI
+    mount V1::SmsConfigsAPI
   
   end
 end

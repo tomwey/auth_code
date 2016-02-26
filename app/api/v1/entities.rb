@@ -6,6 +6,11 @@ module V1
       expose :id
     end # end Base
   
-  
+    class SmsConfig < Base
+      expose :app_name, :sp_provider, :api_key
+      expose :sms_tpl_text, format_with: :null
+      expose :created_at, format_with: :chinese_datetime
+    end
+    
   end
 end
