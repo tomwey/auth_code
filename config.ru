@@ -5,12 +5,12 @@ require 'unicorn/worker_killer'
 
 use Unicorn::OobGC, 10
   
-use Unicorn::WorkerKiller::MaxRequests, 1024, 2048 
+use Unicorn::WorkerKiller::MaxRequests, 500, 600 
   
 use Unicorn::WorkerKiller::Oom, (192*(1024**2)), (256*(1024**2)) 
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Rails.application
 
-memory_usage = (`ps -o rss= -p #{$PID}`.to_i / 1024.00).round(2)
-puts "=> Memory usage: #{memory_usage} MB"
+# memory_usage = (`ps -o rss= -p #{$PID}`.to_i / 1024.00).round(2)
+# puts "=> Memory usage: #{memory_usage} MB"
