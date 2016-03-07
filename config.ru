@@ -5,7 +5,7 @@ require 'unicorn/worker_killer'
 
 use Unicorn::OobGC, 10
   
-use Unicorn::WorkerKiller::MaxRequests, 500, 600 
+use Unicorn::WorkerKiller::MaxRequests, 1024, 2048 
   
 use Unicorn::WorkerKiller::Oom, (192*(1024**2)), (256*(1024**2)) 
 
