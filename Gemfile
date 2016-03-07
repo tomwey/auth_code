@@ -31,18 +31,18 @@ gem 'rack-attack'
 gem 'pg'
 
 # 上传组件
-gem 'carrierwave'#, '~> 0.10.0'
-gem 'mini_magick'#,'~> 4.2.7'#, require: false
+# gem 'carrierwave'#, '~> 0.10.0'
+# gem 'mini_magick'#,'~> 4.2.7'#, require: false
 # 解决大文件上传报内存问题：Cannot allocate memory - identify
-gem 'posix-spawn'
+# gem 'posix-spawn'
 
 # Bootstrap UI
 gem 'bootstrap-sass'#, '~> 3.2.0'
 
 # 分页
-gem 'will_paginate'
-gem 'will_paginate-bootstrap'
-gem 'bootstrap_helper', '4.2.3'
+# gem 'will_paginate'
+# gem 'will_paginate-bootstrap'
+# gem 'bootstrap_helper', '4.2.3'
 
 # 用户系统
 gem 'devise'

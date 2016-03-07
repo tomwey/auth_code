@@ -53,10 +53,6 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
-    bootstrap_helper (4.2.3)
-      railties (>= 4.0.0)
-      thor (~> 0.14)
-      will_paginate (>= 3.0.3)
     builder (3.2.2)
     capistrano (3.4.0)
       i18n
@@ -71,11 +67,6 @@ GEM
     capistrano-rbenv (2.0.4)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -140,7 +131,6 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.99.1)
-    mini_magick (4.2.10)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -157,7 +147,6 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.18.4)
-    posix-spawn (0.3.11)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -256,9 +245,6 @@ GEM
       equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.6)
       rack (>= 1.0)
-    will_paginate (3.1.0)
-    will_paginate-bootstrap (1.0.1)
-      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
@@ -268,11 +254,9 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
-  bootstrap_helper (= 4.2.3)
   capistrano-bundler
   capistrano-rails (~> 1.1.0)
   capistrano-rbenv (~> 2.0)
-  carrierwave
   coffee-rails
   devise
   grape
@@ -280,10 +264,8 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-turbolinks
-  mini_magick
   newrelic-grape
   pg
-  posix-spawn
   quiet_assets
   rack-attack
   rack-cors
@@ -299,5 +281,6 @@ DEPENDENCIES
   uglifier
   unicorn
   unicorn-worker-killer
-  will_paginate
-  will_paginate-bootstrap
+
+BUNDLED WITH
+   1.11.2
