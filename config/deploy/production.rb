@@ -11,7 +11,7 @@ role :app, %w{deployer@120.132.57.133}
 role :web, %w{deployer@120.132.57.133}
 role :db,  %w{deployer@120.132.57.133}
 
-set :server_name, "lease-goods-origin.afterwind.cn"
+set :server_name, "auth-code-origin.afterwind.cn"
 # set :port, "80" # 默认都是80端口
 
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
